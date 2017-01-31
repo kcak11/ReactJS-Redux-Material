@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>rest.html</title>
+</head>
+<body>
+<h2>Press F12 and open console tab to see the result.</h2>
+    <h2>Spread operator</h2>
+    <pre>
+    	spread operator is applied on an array it expands the array into multiple variables in syntax wise. And when its applied to an function argument it makes the function argument behave like array of arguments.
+    </pre>
+    <script>
+        function function_one(...args) { 
+            console.log(args); 
+            console.log(args.length); 
+        } 
+        function_one(1, 4);
+        function_one(1, 4, 7);
+        function_one(1, 4, 7, 0);
+
+        function function_two(a, b, ...args) {
+                console.log(args); 
+                console.log(args.length); 
+                } //"args" holds only 7 and 9 
+                function_two(1, 5, 7, 9);
+    </script>
+
+<script>
+
+  "use strict";
+
+  function calcTaxSpread( customer1, customer2, customer3, income) {
+      console.log("ES6. Calculating tax for customers with the income ", income);
+          console.log("Processing ", customer1, customer2, customer3);
+  }
+  var customers = ["Sriram", "Kavitha", "Ravi"];
+  // spread operator
+  calcTaxSpread(...customers, 50000);
+</script>
+
+</body>
+</html>

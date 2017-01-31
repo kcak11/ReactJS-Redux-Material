@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>rest.html</title>
+</head>
+<body>
+
+<script>
+
+  "use strict";
+
+// ES5 and arguments object
+  function calcTaxES5(){
+
+      console.log("ES5. Calculating tax for customers with the income ",
+                             arguments[0]);   // income is the first element
+
+      // extract an array starting from 2nd element
+      var customers = [].slice.call(arguments, 1);
+
+      customers.forEach(function (customer) {
+          console.log("Processing ", customer);
+      });
+  }
+
+  calcTaxES5(50000, "Sriram", "Kavitha", "Raju");
+  calcTaxES5(750000, "Rajesh","Kiran");
+
+// rest operator
+  function calcTaxES6(income, ...customers) {
+      console.log("ES6. Calculating tax for customers with the income ", income);
+
+      customers.forEach(function (customer) {
+          console.log("Processing ", customer);
+      });
+  }
+
+  calcTaxES6(50000, "Varun", "John", "David");
+  calcTaxES6(750000, "Sri", "Rama");
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello React</title>
+
+    
+<style>
+   * {
+    padding:0;
+    margin:0;
+}
+
+html{
+    font:14px normal Arial, sans-serif;
+    color:#626771;
+    background-color:#fff;
+}
+
+body{
+    padding:60px;
+    text-align: center;
+}
+
+input[type=text]{
+    text-align: center;
+    font: inherit;
+    border: 6px solid #a3d8d6;
+    padding: 13px 12px;
+    font-size: 15px;
+    box-shadow: 0 1px 1px #DDD;
+    width: 384px;
+    outline: none;
+    display: block;
+    color: #7B8585;
+    margin: 0 auto 20px;
+}
+
+ul{
+    list-style: none;
+    display: inline-block;
+    width: 420px;
+    text-align: left;
+}
+
+ul li{
+    display: block;
+    padding: 15px 20px;
+    background-color: #F8F8F8;
+    color: #7B8585;
+    margin-bottom: 3px;
+    position: relative;
+    
+    transition: 0.3s;
+}
+
+ul li a{
+    position: absolute;
+    left: 160px;
+    font-size: 12px;
+    line-height: 16px;
+    color: #969d9d;
+}
+
+ul li:hover{
+    background-color:#d8f2f1;
+}
+</style>
+
+     <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
+  <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js">
+  </script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js">
+  </script>
+<script src="https://npmcdn.com/react-router@2.4.0/umd/ReactRouter.min.js"></script>
+  </head>
+  <body>
+    <h3  style="background-color:orange">
+    D.S.R.Murthy - Search Engine</h3>    
+    <div id="container"></div>
+
+    <script type="text/babel">
+        
+var SearchExample = React.createClass({
+
+    getInitialState: function(){
+        return { searchString: '' };
+    },
+
+    handleChange: function(e){
+
+        // If you comment out this line, the text box will not change its value.
+        // This is because in React, an input cannot change independently of the value
+        // that was assigned to it. In our case this is this.state.searchString.
+
+        this.setState({searchString:e.target.value});
+    },
+
+    render: function() {
+
+        var libraries = this.props.items,
+            searchString = this.state.searchString.trim().toLowerCase();
+
+
+        if(searchString.length > 0){
+
+            // We are searching. Filter the results.
+
+            libraries = libraries.filter(function(l){
+                return l.name.toLowerCase().match( searchString );
+            });
+
+        }
+
+        return <div>
+                    <input type="text" value={this.state.searchString} onChange={this.handleChange} placeholder="Type here" />
+
+                    <ul> 
+
+                        { libraries.map(function(l){
+                            return <li>{l.name} <a href={l.url}>{l.url}</a></li>
+                        }) }
+
+                    </ul>
+
+                </div>;
+
+    }
+});
+
+                                                                                                                                                             
+var libraries = [
+
+    { name: 'Backbone.js', url: 'http://documentcloud.github.io/backbone/'},
+    { name: 'AngularJS', url: 'https://angularjs.org/'},
+    { name: 'jQuery', url: 'http://jquery.com/'},
+    { name: 'Prototype', url: 'http://www.prototypejs.org/'},
+    { name: 'React', url: 'http://facebook.github.io/react/'},
+    { name: 'Ember', url: 'http://emberjs.com/'},
+    { name: 'Knockout.js', url: 'http://knockoutjs.com/'},
+    { name: 'Dojo', url: 'http://dojotoolkit.org/'},
+    { name: 'Mootools', url: 'http://mootools.net/'},
+    { name: 'Underscore', url: 'http://documentcloud.github.io/underscore/'},
+    { name: 'Lodash', url: 'http://lodash.com/'},
+    { name: 'Moment', url: 'http://momentjs.com/'},
+    { name: 'Express', url: 'http://expressjs.com/'},
+    { name: 'Koa', url: 'http://koajs.com/'},
+
+];
+
+// Render the SearchExample component on the page
+
+ReactDOM.render(
+    <SearchExample items={ libraries } />,
+   document.getElementById("container")
+);
+    </script>
+  </body>
+</html>

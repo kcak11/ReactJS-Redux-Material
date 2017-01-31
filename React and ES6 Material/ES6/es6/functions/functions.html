@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html >
+<head>
+    <title></title>
+</head>
+<body>
+    <center><h1 style="background-color:yellow">Functions -   ES6 Demo by Murthy</h1></center>
+    <script>
+        function add(n1, n2) {
+            var sum = n1 + n2
+            console.log("The sum of the values entered " + sum)
+        }
+        add(12, 13)
+
+        //Default params
+        function add(a, b = 1) { 
+            return a+b; 
+        } 
+            console.log(add(4)) 
+            console.log(add(4,2)) // b overwritten by 2
+
+            // params
+            function fun1(...params) { 
+                console.log(params.length); 
+            }  
+            fun1();  
+            fun1(5); 
+            fun1(5, 6, 7);
+
+
+            //Anonymous Function
+            var f=function(){ return "hello"} 
+            console.log(f()) 
+
+
+            //Anonymous Params function
+            var func = function(x,y){ return x*y }; 
+            function product() 
+            { 
+                var result; 
+                result = func(10,20); 
+                console.log("The product : "+result) 
+            } 
+            product() 
+            
+
+            //Function Constructor
+            var func = new Function("x", "y", "return x*y;"); 
+            function product() 
+            { 
+                var result; 
+                result = func(10,20); 
+                console.log("The product : "+result) 
+            } 
+            product()
+
+
+            //Immediately invoking and executing function
+            var main = function() 
+            { 
+                (function() 
+                { 
+                    for(var x=0;x<5;x++) 
+                    { 
+                        console.log(x); 
+                    } 
+                })(); 
+                console.log("x can not be accessed outside the block scope x value is :"+x); 
+  
+            } 
+            main(); 
+
+
+            //void
+            /*
+            Void and Immediately Invoked Function Expressions    
+            When using an immediately-invoked function expression, void 
+            can be used to force the function keyword to be treated as an expression instead of a declaration. 
+
+            */
+            void function iife_void() 
+            { 
+                var msg = function () {console.log("hello world")}; 
+                msg(); 
+            }(); 
+
+            
+        
+
+    </script>
+
+    <a href="javascript:void(javascript:alert('hello world!!'))">
+        Click here to do nothing
+    </a>
+    <br /><br /><br />
+    <a href="javascript:alert('hello');">
+        Click here for an alert
+    </a>
+
+</body>
+</html>

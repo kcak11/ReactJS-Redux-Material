@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>class in ES6</title>
+</head>
+<body>
+<h1>ES6 class - Only explain
+
+<script>
+    class Student { 
+    //constructor of the class
+     constructor(name, age) { 
+     //"this" points to the current object 
+     this.name = name;
+     this._age = age; 
+     }
+     //member function 
+     getName(){ 
+        return this.name; 
+       } 
+     setName(name) { 
+        this.name = name; 
+      }
+      
+      //getters and setters make a function accessible like a variable.
+     //  They are used as wrappers around other variables. 
+     set age(value) {
+      this._age = value; 
+      }
+     get age() {
+      return this._age;
+       }
+  }
+
+  //class person inherits student 
+  class Person extends Student { 
+   
+
+      constructor(name, age, citizen) {
+        super(name, age);// super should be the first statement in constructor
+
+       //this points to the person class 
+       this.citizen = citizen;
+       //call constructor of super class. "super" is an pointer to the super class object 
+        
+     } 
+    getCitizen() { 
+        return this.citizen;
+        } 
+
+    //overriding
+     getName() { 
+     //we are calling the super class getName function
+      return super.getName(); 
+      }
+ }
+  //instance of student class 
+  var stud = new Student("Kavitha", 40);
+   //instance of person class 
+   var p = new Person("Srirama Murthy", 45, "India"); 
+   stud.age = 50; 
+   //executes setter
+    console.log(stud.age); //executes getter
+
+</script>
+
+</body>
+</html>

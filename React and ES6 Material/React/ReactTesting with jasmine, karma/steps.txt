@@ -1,0 +1,14 @@
+React - Jasmine - karma
+-----------------------
+
+npm install karma karma-jasmine karma-chrome-launcher karma-webpack --save-dev
+
+npm install karma-cli -g
+
+create karma.conf.js 
+>karma init karma.conf.js
+
+Create folder structure and files
+
+write code in App.spec.js
+

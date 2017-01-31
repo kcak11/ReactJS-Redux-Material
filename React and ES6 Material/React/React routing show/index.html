@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+
+<style>
+body {
+  background-color: #FFAAFF;
+  padding: 20px;
+  margin: 0;
+}
+h1, h2, p, ul, li {
+  font-family: Helvetica, Arial, sans-serif;
+}
+ul.header li {
+  display: inline;
+  list-style-type: none;
+  margin: 0;
+}
+ul.header {
+  background-color: yellow;
+  padding: 0;
+}
+ul.header li a {
+  color: #FFF;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 40px;
+  display: inline-block;
+}
+.content {
+  background-color: #ccddff;
+  padding: 20px;
+}
+.content h2 {
+  padding: 0;
+  margin: 0;
+}
+.content li {
+  margin-bottom: 10px;
+}
+.active {
+  background-color: #0099FF;
+}
+</style>
+  <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
+  <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js">
+  </script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js">
+  </script>
+<script src="https://npmcdn.com/react-router@2.4.0/umd/ReactRouter.min.js"></script>
+  
+ 
+</head>
+  
+<body>
+  
+  <div id="container">
+  
+  </div>
+  
+  <script type="text/babel">
+  var { Router,
+      Route,
+      IndexRoute,
+      IndexLink,
+      Link } = ReactRouter;
+
+    var destination = document.querySelector("#container");
+
+ var App = React.createClass({
+  render: function() {
+    return (
+      <div>
+        <h1>SPA in React By Murthy</h1>
+        <ul className="header">
+          <li><IndexLink to="/" activeClassName="active">Home</IndexLink></li>
+          <li><Link to="/service" activeClassName="active">Our Services</Link></li>
+          <li><Link to="/contact" activeClassName="active">Contact</Link></li>
+        </ul>
+        <div className="content">
+          {this.props.children}
+        </div>
+      </div>
+    )
+  }
+});
+
+var Home = React.createClass({
+  render: function() {
+      return (
+        <div>
+          <h2>Pratibha Infotek Welcome's you</h2>
+          <p>We offer corporate training services online for Microsoft<br/>
+             Technology and UI technology at global level with highly <br/>
+             experienced faculty . 
+          </p>
+  
+          <p>Quality servie is our motto</p>
+        </div>
+      );
+    }
+});
+
+
+var Contact = React.createClass({
+  render: function() {
+      return (
+        <div>
+          <h2>For Any queries Kindly contact</h2>
+          <p>Murthy Srirama . Cell : 98480 11641
+          or mail  to dsrmurthy786@yahoo.com
+          </p>
+        </div>
+      );
+    }
+});
+
+
+var Service = React.createClass({
+  render: function() {
+      return (
+        <div>
+          <h2>Services</h2>
+          <p>We offer training in following technologies</p>
+          <ol>
+            <li>Complete Microsoft .Net (.Net 4.5.3)</li> 
+            <li>React with Redux</li>
+            <li>Angular 2 with Typescript</li>
+            <li>Node JS</li>
+            <li>Grunt, Gulp, webpack..</li>
+          </ol>
+        </div>
+      );
+    }
+});
+
+
+    ReactDOM.render(
+  <Router>
+    <Route path="/" component={App}>
+      <IndexRoute component={Home} />
+      <Route path="service" component={Service}>       
+      </Route>
+      <Route path="contact" component={Contact} />
+    </Route>
+  </Router>,
+  destination);
+  </script>
+</body>
+  
+</html>

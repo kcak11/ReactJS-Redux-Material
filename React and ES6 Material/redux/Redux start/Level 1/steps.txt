@@ -1,0 +1,58 @@
+﻿To Run:  npm start  , open browser and type localhost:3000
+==========================================================
+
+mapStateToProps: We use this method to define how we are going to map
+the state from the Redux store to the props being sent to the components
+connected to listen to the store. Whenever new changes happen in the store,
+the components get notified and are passed to the object payload from
+this method.
+
+• mapDispatchToProps: This method is used to map the Actions and pass
+them on the props so that they can be used from within the component.
+
+• bindActionCreators: This is used to wrap our Actions creator
+ into dispatch calls to support calling the actions directly.
+This helps to call the actions and notify the store for updates, which are done
+due to the dispatch.
+
+• connect: connects the React component to the store. It does not change the original component, but
+enhances and creates a new one. We can then start using the Actions from
+our component.
+
+"The Provider component from the react-redux module allows us to connect the
+components to the stores. It accepts a store that we are setting up as the initial store
+state. The Provider component makes this store available to the components that
+are connected to hear from the store    
+
+createStore: This creates a store for us to represent the complete state tree
+of the application. It takes in the arguments—the reducer and initial state for the store.
+
+applyMiddleware: This is used to enhance Redux with middleware. Here,
+we are using the thunk middleware, which allows us to do asynchronous
+dispatches.
+
+
+
+>npm install --save redux
+>npm install --save react-redux
+
+
+
+
+To get started, first install all the necessary dependencies.
+```
+> npm install
+```
+
+Run an initial webpack build
+```
+> webpack
+```
+
+Start the development server (changes will now update live in browser)
+```
+> npm run start
+
+
+To view your project, go to: [http://localhost:3000/](http://localhost:3000/)
+ 

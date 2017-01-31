@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>optionalParameters.html</title>
+</head>
+<body>
+<h2>ES6 - Default values to Functional  Parameters</h2>
+<script>
+function myFunction(x = 1, y = 2, z = 3) {
+ console.log(x, y, z); 
+ // Output "6 7 3" } myFunction(6,7);
+
+ //we can pass even expressions in parameters
+ function myFunction(x = 1, y = 2, z = 3 + 5) {
+  console.log(x, y, z); // Output "6 7 8" 
+ }
+  myFunction(6,7);
+</script>
+
+<script>
+
+    function calcTaxES5(income, state){
+
+        state = state || "Telangana";
+
+        console.log("ES5. Calclating tax for the resident of " + state + " with the income " + income);
+
+    }
+
+    calcTaxES5(50000);
+
+
+
+    function calcTaxES6(income, state="Telangana") {
+        console.log("ES6. Calclating tax for the resident of " + state + " with the income " + income);
+    }
+
+    calcTaxES6(50000);
+
+
+</script>
+
+</body>
+</html>

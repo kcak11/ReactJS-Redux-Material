@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>let.html</title>
+</head>
+<body>
+<h2>let keyword is used to define block scope(bracket scope) variables in JavaScript.</h2>
+
+<script>
+    "use strict";
+    let customer = "Murthy";
+    (function (){
+        console.log("The name of the customer inside the function is "  + customer);
+        if (2 > 1) {
+         let customer = "Sriram";
+         console.log("The name of the customer inside the block is "  + customer);
+        }
+    })();
+
+    for (let i=0; i<5; i++){
+        console.log("i=" + i);
+    }
+    console.log("i=" + i);   // prints Uncaught ReferenceError: i is not defined
+</script>
+
+</body>
+</html>

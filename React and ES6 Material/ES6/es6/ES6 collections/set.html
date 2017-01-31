@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>class in ES6</title>
+</head>
+<body>
+<h1>Working with set </h1>
+<h2>A set does not allow duplicate values like array</h2>
+<h2>A JavaScript “Set” object can store only keys but “Map” can store key and value pairs</h2>
+
+<script>
+   //create a set 
+   var set = new Set(); 
+   //add three keys to the set 
+   set.add({x: 12}); 
+   set.add(44); 
+   set.add("text");
+    //check if a provided key is present 
+    console.log(set.has("text")); 
+    //delete a key 
+    set.delete(44);
+     //loop through the keys in an set 
+     for(var i of set) { 
+     console.log(i); 
+     } 
+     //create a set from array values
+      var set_1 = new Set([1, 2, 3, 4, 5]); 
+      //size of set 
+      console.log(set_1.size); //5
+       //create a clone of another set var
+        set_2 = new Set(set.values());
+
+</script>
+
+</body>
+</html>

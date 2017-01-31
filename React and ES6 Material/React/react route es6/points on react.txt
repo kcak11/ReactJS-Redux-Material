@@ -1,0 +1,88 @@
+Points :
+======
+
+React Features
+==============
+•	JSX − JSX is JavaScript syntax extension. It isn't necessary to use JSX in React development, but it is recommended.
+
+•	Components − React is all about components.  This will help  to maintain the code when working on larger scale projects.
+
+•	Unidirectional data flow and Flux − React implements one way data flow which makes it easy to reason about  app. Flux/Redux is a pattern that helps keeping  data unidirectional.
+
+•	License − React is licensed under the Facebook Inc. Documentation is licensed under CC BY 4.0.
+
+-------------------------------------------------
+React Advantages
+----------------
+•	React uses virtual DOM which is JavaScript object. This will improve apps performance since JavaScript virtual DOM is faster than the regular DOM.
+
+•	React can be used on client and server side.
+
+•	Component and Data patterns improve readability which helps to maintain larger apps.
+
+•	React can be used with other frameworks.
+---------------------------------------------------------
+
+React's render() is responsible for generating virual DOM.
+Render() should return only one root node. (So nest them)
+
+Naming Convention:
+HTML tags are always using lowercase tag names, while React components starts with Uppercase.
+
+Use className and htmlFor as XML attribute names instead of class and for.
+
+Stateless Example:
+----------------
+Stateful Example
+---------------
+
+Note:
+----
+State is the place where the data comes from. Always  make state as simple as possible and minimize number of stateful components.
+ If you have ten components that need data from the state, create one container component that will keep the state for all of them.
+
+State vs props:
+--------------
+The main difference between state and props is that props are immutable. This is why container component should define state that can be updated and changed, while the child components should only pass data from the state using props.
+
+Setting State:
+=============
+import React from 'react';
+
+class App extends React.Component {
+   constructor() {
+      super();
+		
+      this.state = {
+         data: []
+      }
+	
+      this.setStateHandler = this.setStateHandler.bind(this);
+   };
+
+   setStateHandler() {
+      var item = "setState..."
+      var myArray = this.state.data;
+      myArray.push(item)
+      this.setState({data: myArray})
+   };
+
+   render() {
+      return (
+         <div>
+            <button onClick = {this.setStateHandler}>SET STATE</button>
+            <h4>State Array: {this.state.data}</h4>
+         </div>
+      );
+   }
+}
+
+export default App;
+-=============================================================
+
+
+
+
+
+
+

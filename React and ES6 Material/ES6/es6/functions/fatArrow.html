@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>fatArrow.html</title>
+</head>
+<body>
+
+<script>
+
+//sum is the function name
+ //x and y are function parameters
+  var sum = (x, y) => x + y; 
+  console.log(sum(2, 900)); //902
+/*
+
+Here (x, y) => x + y returns a regular JavaScript function object. Here the function body of the returned function object’s body would be function(x, y){return x+ y;} Arrow functions always return the value of the statement when executed. Here result of x+y is returned.
+*/
+
+/*
+multiple statements in an arrow function but arrow functions are mostly used in replacement of single statement functions. 
+*/
+var sum = (x, y) => {
+  x  = x + 10;
+  y = y + 10; 
+  return x + y; 
+}
+console.log(sum(10, 10)); //40
+
+ 
+/*
+“this” pointer inside an asynchronously executed arrow function points to the scope inside which it was passed as callback. A regular function’s this pointer points to global scope when executed asynchronously.
+*/
+window.age = 12; 
+function Person(){ 
+this.age = 34; 
+setTimeout(() => {
+   console.log(this.age); //34
+ }, 1000); 
+
+ setTimeout(function(){
+  console.log(this.age); //12
+   }, 1000); 
+} 
+var p = new Person();
+
+
+  "use strict";
+  function StockQuoteGenerator(symbol){
+       this.symbol = symbol;
+      setInterval(() => {
+                 console.log("The price quote for " + this.symbol
+                         + " is " + Math.random());
+              }, 1000);
+  }
+  var stockQuoteGenerator = new StockQuoteGenerator("IBM");
+
+</script>
+
+</body>
+</html>

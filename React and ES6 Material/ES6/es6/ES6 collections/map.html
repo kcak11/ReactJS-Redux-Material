@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>class in ES6</title>
+</head>
+<body>
+<h1>Working with map </h1>
+
+<h2>A JavaScript “Set” object can store only keys but “Map” can store key and value pairs</h2>
+
+<script>
+  //create a map 
+  var map = new Map(); 
+  //add three keys & values to the map 
+  map.set({x: 12}, 12); 
+  //same key is overwritten 
+  map.set(44, 13); 
+  map.set(44, 12); 
+  //check if a provided key is present
+   console.log(map.has(44)); //true 
+   //retrieve key 
+   console.log(map.get(44)); //12 
+   //delete a key 
+   map.delete(44); 
+   //loop through the keys in an map 
+   for(var i of map) { 
+   console.log(i);
+    } 
+    //delete all keys 
+    map.clear();
+
+    //create a map from arrays 
+    var map_1 = new Map([[1, 2], [4, 5]]); 
+    //size of map 
+    console.log(map_1.size); //2
+
+</script>
+
+</body>
+</html>

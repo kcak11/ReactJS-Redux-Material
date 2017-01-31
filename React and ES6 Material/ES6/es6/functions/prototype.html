@@ -1,0 +1,26 @@
+﻿<html>
+<head>
+    <title>User-defined objects</title>
+    <script type="text/javascript">
+        /*
+        Prototype            The prototype property allows you to add properties and methods to 
+        any object (Number, Boolean, String and Date, etc.). 
+Note: Prototype is a global property which is available with almost all the objects. 
+        */
+function book(title, author){
+    this.title = title;
+    this.author = author;
+}
+    </script>
+</head>
+<body>
+    <script type="text/javascript">
+
+var myBook = new book("Sri", "Ram");
+book.prototype.price = null;
+myBook.price = 100;
+document.write("Book title is : " + myBook.title + "<br>");
+document.write("Book author is : " + myBook.author + "<br>");
+document.write("Book price is : " + myBook.price + "<br>");
+    </script>
+</body>
