@@ -94,7 +94,7 @@ A `<Link>` can know when the route it links to is active and automatically apply
 
 #### Props
 ##### `to`
-A [location descriptor](/Glossary.md#locationdescriptor). Usually this is a string or an object, with the following semantics:
+A [location descriptor](./Glossary.md#locationdescriptor). Usually this is a string or an object, with the following semantics:
 
 * If it's a string it represents the absolute path to link to, e.g. `/users/123` (relative paths are not supported).
 * If it's an object it can have four keys:
@@ -249,7 +249,7 @@ The path used in the URL.
 It will concat with the parent route's path unless it starts with `/`,
 making it an absolute path.
 
-**Note**: Absolute paths may not be used in route config that is [dynamically loaded](/guides/DynamicRouting.md).
+**Note**: Absolute paths may not be used in route config that is [dynamically loaded](./guides/DynamicRouting.md).
 
 If left undefined, the router will try to match the child routes.
 
@@ -353,7 +353,7 @@ code-splitting.
 ```
 
 ##### `children`
-Routes can be nested, `this.props.children` will contain the element created from the child route component. Please refer to the [Route Configuration](/guides/RouteConfiguration.md) since this is a very critical part of the router's design.
+Routes can be nested, `this.props.children` will contain the element created from the child route component. Please refer to the [Route Configuration](./guides/RouteConfiguration.md) since this is a very critical part of the router's design.
 
 ##### `onEnter(nextState, replace, callback?)`
 Called when a route is about to be entered. It provides the next router state and a function to redirect to another path. `this` will be the route instance that triggered the hook.
@@ -442,7 +442,7 @@ let myRoute = {
 ```
 
 ##### `indexRoute`
-The [index route](/guides/IndexRoutes.md). This is the same as specifying an `<IndexRoute>` child when using JSX route configs.
+The [index route](./guides/IndexRoutes.md). This is the same as specifying an `<IndexRoute>` child when using JSX route configs.
 
 ##### `getIndexRoute(partialNextState, callback)`
 
@@ -497,7 +497,7 @@ By default, the query parameters will just pass through but you can specify them
 </Route>
 ```
 
-Note that the `<Redirect>` can be placed anywhere in the route hierarchy, though [normal precedence](/guides/RouteMatching.md#precedence) rules apply. If you'd prefer the redirects to be next to their respective routes, the `from` path will match the same as a regular route `path`.
+Note that the `<Redirect>` can be placed anywhere in the route hierarchy, though [normal precedence](./guides/RouteMatching.md#precedence) rules apply. If you'd prefer the redirects to be next to their respective routes, the `from` path will match the same as a regular route `path`.
 
 ```js
 <Route path="course/:courseId">
@@ -512,7 +512,7 @@ Note that the `<Redirect>` can be placed anywhere in the route hierarchy, though
 ### `<IndexRoute>`
 An `<IndexRoute>` allows you to provide a default "child" to a parent route when visitor is at the URL of the parent.
 
-Please see the [Index Routes guide](/guides/IndexRoutes.md).
+Please see the [Index Routes guide](./guides/IndexRoutes.md).
 
 #### Props
 All the same props as [Route](#route) except for `path`.
@@ -522,7 +522,7 @@ All the same props as [Route](#route) except for `path`.
 ### `<IndexRedirect>`
 An `<IndexRedirect>` allows you to redirect from the URL of a parent route to another route. They can be used to allow a child route to serve as the default route for its parent, while still keeping a distinct URL.
 
-Please see the [Index Routes guide](/guides/IndexRoutes.md).
+Please see the [Index Routes guide](./guides/IndexRoutes.md).
 
 #### Props
 All the same props as [Redirect](#redirect) except for `from`.
@@ -550,7 +550,7 @@ Contains methods relevant to routing. Most useful for imperatively transitioning
 A subset of `this.props.params` that were directly specified in this component's route. For example, if the route's path is `users/:userId` and the URL is `/users/123/portfolios/345` then `this.props.routeParams` will be `{userId: '123'}`, and `this.props.params` will be `{userId: '123', portfolioId: '345'}`.
 
 #### `children`
-The matched child route element to be rendered. If the route has [named components](/API.md#named-components) then this will be undefined, and the components will instead be available as direct properties on `this.props`.
+The matched child route element to be rendered. If the route has [named components](./API.md#named-components) then this will be undefined, and the components will instead be available as direct properties on `this.props`.
 
 ##### Example
 ```js
@@ -627,7 +627,7 @@ class Users extends React.Component {
 
 ## Histories
 
-For more details, please see the [histories guide](/guides/Histories.md).
+For more details, please see the [histories guide](./guides/Histories.md).
 
 ### `browserHistory`
 `browserHistory` uses the HTML5 History API when available, and falls back to full refreshes otherwise. `browserHistory` requires additional configuration on the server side to serve up URLs, but is the generally preferred solution for modern web pages.
@@ -668,7 +668,7 @@ The function will create a `history` for you, passing the additional `options` a
 
 The three arguments to the callback function you pass to `match` are:
 - `error`: A Javascript `Error` object if an error occurred, `undefined` otherwise.
-- `redirectLocation`: A [Location](/Glossary.md#location) object if the route is a redirect, `undefined` otherwise.
+- `redirectLocation`: A [Location](./Glossary.md#location) object if the route is a redirect, `undefined` otherwise.
 - `renderProps`: The props you should pass to the routing context if the route matched, `undefined` otherwise.
 
 If all three parameters are `undefined`, this means that there was no route found matching the given location.
