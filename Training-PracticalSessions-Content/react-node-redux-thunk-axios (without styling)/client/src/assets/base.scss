@@ -1,0 +1,116 @@
+// =======================
+// Import a fancy font
+// =======================
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,300,700,400italic);
+
+// =======================
+// VARIABLES
+// =======================
+$primary-color: #F186F1;
+$secondary-color: #B364B4;
+$tertiary-color: #A58DA5;
+$accent-color: #726272;
+$error-color: #FF5A00;
+
+$black: #000000;
+$white: #ffffff;
+
+// Body
+$font-stack: 'Open Sans', sans-serif;
+$content-body-desktop-width: 0em 15em;
+$content-body-laptop-width: 0em 7em;
+$content-body-tablet-width: 0em 2em;
+$content-body-mobile-width: 0em 0em;
+
+// Title
+$title-color: $primary-color;
+$title-size: 2.25em;
+
+// Navigation
+$nav-color: $tertiary-color;
+$nav-hover: $primary-color;
+$nav-selected: $primary-color;
+$nav-size: 1.25em;
+$nav-height: 100px;
+
+// Elements
+h1, h2 {
+  font-family: $font-stack;
+  text-transform: uppercase;
+  color: $primary-color;
+  font-weight: 400;
+  margin : 0;
+}
+
+h3, h4, h5 {
+  font-family: $font-stack;
+  text-transform: uppercase;
+  color: $tertiary-color;
+  font-weight: 400;
+  margin: 0;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.75em;
+}
+
+h4 {
+  font-size: 1.5em;
+}
+
+h5 {
+  font-size: 1.25em;
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover {
+  color: $secondary-color;
+}
+
+ul {
+  margin: 1em 0em;
+}
+
+li {
+  list-style: none;
+}
+
+// =======================
+// MAIN
+// =======================
+
+html, html a {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+}
+
+body {
+  font-family: $font-stack;
+  margin: 0px;
+}
+
+.content_body {
+  display: inline-block;
+  border-left: 2px dotted $accent-color;
+  border-right: 2px dotted $accent-color;
+  margin: $content-body-desktop-width;
+  padding: 4em;
+  padding-top: $nav-height;
+  position: relative;
+  height: auto;
+  overflow: hidden;
+}

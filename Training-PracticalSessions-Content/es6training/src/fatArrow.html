@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	var a=(k)=>{
+		let abc="Ashish "+k;
+		return abc;
+	}
+	console.log(a("Kumar"));
+
+	window.age=23;
+	function Person(){
+		this.age=34;
+		setTimeout(()=>{
+			console.log(this.age);
+		},1000);
+		setTimeout(function(){
+			console.log(this.age);
+		},1000);
+	}
+	var p=new Person();
+</script>
+</body>
+</html>

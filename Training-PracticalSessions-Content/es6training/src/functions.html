@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Functions HTML by Ashish Kumar</title>
+</head>
+<body>
+<script type="text/javascript">
+	function sum(a,b=1){
+		console.log(a+b);
+	}
+	sum(4);
+	sum(4,11);
+	function myfunc(){
+		return 25;
+	}
+	function abc(a=1,b,c=myfunc()){
+		console.log(a,b,c);
+	}
+	abc();
+
+	function calcTaxES5(income,state="Telangana"){
+		console.log(state);
+	}
+	calcTaxES5(56,"slfj");
+	calcTaxES5();
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	function function_one(x=5,...a){
+		console.log(x);
+		console.log(a);
+		console.log(a.length);
+	}
+	function_one(1,4);
+	function_one(1,2,3,4,5,6);
+
+	function abc(a,b,c,...d){
+		console.log(arguments);
+		console.log(d);
+	}
+	let kk=["abc","def","efgh","ljsf"];
+	abc(...kk,50000,56,67,78,90);
+</script>
+</body>
+</html>

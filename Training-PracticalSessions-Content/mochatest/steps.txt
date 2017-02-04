@@ -1,0 +1,192 @@
+Mocha TDD framework
+
+http://mochajs.org
+
+blanket.js  - for code code coverage
+sinon.js  - for mocking
+selenium  - web driver to test browser
+
+Goto DOS command prompt then
+create mochatest folder
+(Atleast try npm install -g mocha)
+
+>md mochatest
+
+>cd mochatest
+
+>npm init -y    (create package.json)
+
+>npm install mocha --save-dev
+
+
+>mocha --version
+
+>mocha --help
+
+
+
+write indexspec.js
+-------------------
+// in TDD , first write test code
+
+describe('sanitize',function(){
+	it('return lowercase of string');
+	it('remove any hipen');
+});
+
+
+
+
+// >mocha indexspec.js
+  observe : 0 passing 
+  			2 pending
+
+ Assert Library:
+ 	- should.js   - BDD style
+ 	- chai        - expect(), assert() style assertions
+ 	- expect js   - expect style expect()
+ 	- expectations - jasmine style expect()
+
+ mock, stub:
+    nock : http mocking and expect library
+
+chaijs.com   (see home page)
+  http://chaijs.com/api (see api and examples)
+
+> npm install chai --save-dev
+
+
+now include in indexspec.js at top
+----------------------------------
+var chai=require('chai')
+var expect = require('chai').expect;
+
+describe('sanitize',function(){
+	
+//level 2
+it('testing expects',function(){
+	var word='Hello World';
+	expect(word).to.equal('Hello World');	
+	expect(word).to.be.a('string');
+	expect(word).to.contain('Hello');
+	});
+});  
+
+>mocha indexspec.js
+
+now add index.js
+---------------
+exports.sanitize=function(word){
+	console.log('Running ');
+	return word.toLowerCase();
+} 
+
+
+now open test code and add below code:
+...
+var word=require('./index'); // add this for level 3
+...
+//Level 3
+it('testing expects',function(){
+ var inputWord='Hello World';
+ var outputWord= word.sanitize(inputWord);
+ expect(outputWord).to.equal('hello world')
+	}); 
+});
+
+// mocha indexspec.js
+
+Hooks:
+------
+beforeEach(function(){
+	console.log('before each test');
+});
+
+before(function(){
+	console.log('before all tests')
+})
+
+after(function(){
+	consoe.log('after');
+})
+
+if you have 100 tests  then use
+
+it.only('simpletest',function(){...})
+
+it.skip(...)  to skip test
+
+Reports:
+-------
+>mocha --reporters
+  dot matrix
+  ...
+>mocha indexspec.js  --reporter  dot
+  hides tests data and useful if you  have 100/200 tests
+
+>mocha  indexspec.js  --reporter doc> output.html
+  .. output.html is created
+   now open this in browser to see the report
+
+in big projects with more than 100 tests you have then create test folder
+and move indexspec.js to test folder
+
+in code  
+var word=require('../index');
+
+>mocha 
+
+   no file required.  automatically tests will be exeucted
+
+
+now create mocha.opts in test folder  test/mocha.opts
+
+enter below code :
+-----------------
+--reporter progress
+--recursive
+--no-colors
+
+and run mocha
+
+Test Coverage:
+==============
+
+npm install blanket --save-dev
+
+now open package.json and configure like below
+
+{
+  "name": "mochatest",
+  "version": "1.0.0",
+  "description": "Learning mocha",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "blanket": "^1.1.9",
+    "chai": "^3.4.0"
+  },
+  "devDependencies": {
+    "mocha": "^2.3.3"
+  },
+  "config":{
+      "blanket":["index.js"],
+      "data-cover-never":"node_modules"
+    },
+  "scripts": {
+    "test": "mocha test 
+              --require blanket 
+              --reporter html-cov>coverage.html"
+  },
+  "author": "Murthy",
+  "license": "ISC"
+}
+
+To run:
+
+>npm test 
+
+open coverage.html in browser
+
