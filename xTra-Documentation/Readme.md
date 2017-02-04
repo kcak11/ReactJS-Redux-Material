@@ -17,4 +17,4 @@
 ## <a href="https://babeljs.io/docs/setup/#installation" target="_blank">Refer Here</a>
 
 # Webpack Configuration
-## <a href="https://webpack.js.org/configuration/" target="_blank">Refer Here</a>
+## <a href="https://webpack.js.org/configuration/" target="new_blank">Refer Here</a>
