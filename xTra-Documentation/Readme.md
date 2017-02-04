@@ -1,1 +1,3 @@
-# React Router Documentation is available @ [The Official Website](https://github.com/ReactTraining/react-router/tree/master/docs)
+# React Router API Documentation
+
+<a href="https://github.com/ReactTraining/react-router/tree/master/docs" target="_blank">The Official Website</a>
