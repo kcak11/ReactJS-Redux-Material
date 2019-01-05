@@ -36,7 +36,7 @@
     "redux-devtools": "^1.0.2",
     "style-loader": "^0.12.3",
     "webpack": "^1.9.6",
-    "webpack-dev-server": "^1.8.2"
+    "webpack-dev-server": ">=3.1.11"
   },
   "dependencies": {
     "classnames": "^2.1.3",
