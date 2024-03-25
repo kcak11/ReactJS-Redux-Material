@@ -30,7 +30,7 @@
     "sass-loader": "^4.0.0",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.1",
-    "webpack-dev-middleware": "^1.6.1",
+    "webpack-dev-middleware": "^5.3.4",
     "webpack-dev-server": "^3.1.11",
     "webpack-hot-middleware": "^2.11.0"
   },
