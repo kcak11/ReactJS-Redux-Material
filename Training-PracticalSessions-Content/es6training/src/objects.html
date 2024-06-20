@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	var {a,b}={a:"Ashish",b:"Kumar"};
+	console.log(a,b);
+
+	var roles={
+		type:"Admin",
+		displayType:function(){
+			console.log(this.type);
+		}
+	}
+	var super_role=Object.create(roles);
+	super_role.displayType();
+
+	var guest_role=Object.create(roles);
+	guest_role.type="Guest";
+	guest_role.displayType();
+
+	var det={name:"Ashish",id:"2503727"};
+	var copy=Object.assign({},det);
+	console.log(copy);
+	for(let key in copy){
+		console.log(copy[key]);
+	}
+
+	var o1={a:10};
+	var o2={b:20};
+	var o3={c:30};
+	var obj=Object.assign(o1,o2,o3);
+	console.log(obj);
+	console.log(o1);  //obj is reference to o1 now
+
+	var a={name:"Ashish",age:20};
+	console.log(a);
+	var b=Object.assign({},a,{age:46});
+	console.log(b);
+	
+</script>
+</body>
+</html>

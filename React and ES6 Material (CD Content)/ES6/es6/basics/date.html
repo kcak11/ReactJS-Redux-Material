@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html >
+<head>
+    <title></title>
+</head>
+<body>
+    <center><h1 style="background-color:yellow">Date-   ES6 Demo by Murthy</h1></center>
+    <script>
+        var dt = new Date("December 25, 1995 23:15:00");
+        console.log("getDay() : " + dt.getDay());
+        console.log("getTime() : " + dt.getTime());
+        console.log("getHours() : " + dt.getHours());
+        console.log("getMilliseconds() : " + dt.getMilliseconds());
+        console.log("getMinutes() : " + dt.getMinutes());
+        console.log("getSeconds() : " + dt.getSeconds());
+
+ 
+
+        var dt = new Date("Aug 28, 2017 23:30:00");
+        dt.setFullYear(2000);
+        console.log(dt)
+
+        dt.setHours(02);
+        console.log(dt);
+
+        dt.setMilliseconds(1010);
+        console.log(dt);
+
+        dt.setMinutes(45);
+        console.log(dt);
+
+        dt.setMonth(2);
+        console.log(dt)
+
+        var dateobject = new Date(1993, 6, 28, 14, 39, 7);
+        stringobj = dateobject.toString();
+        console.log("String Object : " + stringobj);
+
+    </script>
+
+</body>
+</html>

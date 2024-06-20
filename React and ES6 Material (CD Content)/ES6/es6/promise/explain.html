@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html >
+<head>
+    <title></title>
+</head>
+<body>
+    <center><h1 style="background-color:yellow">promise-   ES6 Demo by Murthy</h1></center>
+    <script>
+        //callback .. see the issue here
+      
+    function notifyAll(fnSms, fnEmail)   
+    {   
+        console.log('starting notification process');   
+        fnSms();   
+        fnEmail();   
+    }   
+    notifyAll(function()   
+    {   
+        console.log("Sms send ..");   
+    }, function()   
+    {   
+        console.log("email send ..");   
+    });   
+    console.log("End of script"); //executes last or blocked by other methods  
+        /*
+        output:
+        starting notification process 
+        Sms send .. 
+        Email send .. 
+        End of script
+
+        */
+
+        //async callback ... successfull execution of above code
+    function notifyAll(fnSms, fnEmail)   
+    {   
+        setTimeout(function()   
+        {   
+            console.log('starting notification process');   
+            fnSms();   
+            fnEmail();   
+        }, 2000);   
+    }   
+    notifyAll(function()   
+    {   
+        console.log("Sms send ..");   
+    },  
+    function () {
+        console.log("email send ..");
+    });
+    console.log("End of script"); //executes first or not blocked by others 
+
+        /*  output: 
+        End of script 
+        starting notification process 
+        Sms send .. 
+        Email send .. 
+
+        */
+
+
+        //multiple callback  ... scary code
+    setTimeout(function () {
+        console.log("one");
+        setTimeout(function () {
+            console.log("two");
+            setTimeout(function () {
+                console.log("three");
+            }, 1000);
+        }, 1000);
+    }, 1000);
+        // solution is es6 promise
+        /*
+        ES6 comes to your rescue by introducing the concept of promises.
+        Promises are "Continuation events" 
+        and they help  execute the multiple async operations together in a much cleaner code style. 
+        */
+    var promise = new Promise(function(resolve , reject){    // do a thing, possibly async , then..  
+        if(/*everthing turned out fine */)    resolve("stuff worked");  
+        else     reject(Error("It broke"));  
+    });  
+    return promise; // Give this to someone 
+
+
+    </script>   
+    
+
+</body>
+</html>

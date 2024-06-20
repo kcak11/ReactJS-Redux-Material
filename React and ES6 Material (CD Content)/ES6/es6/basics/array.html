@@ -1,0 +1,198 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <center><h1 style="background-color:yellow">Array -   ES6 Demo by Murthy</h1></center>
+    <pre>
+        Features of an Array 
+ An array declaration allocates sequential memory blocks.  
+ Arrays are static. This means that an array once initialized cannot be resized.  
+ Each memory block represents an array element.  
+ Array elements are identified by a unique integer called as the subscript/index of the element.  
+ Arrays too, like variables, should be declared before they are used.  
+ Array initialization refers to populating the array elements.   
+ Array element values can be updated or modified but cannot be deleted.  
+
+        concat()  
+Returns a new array comprised of this array joined with other array(s) and/or value(s)  
+every()  
+Returns true if every element in this array satisfies the provided testing function  
+filter()  
+Creates a new array with all of the elements of this array for which the provided filtering function returns true  
+forEach()  
+Calls a function for each element in the array  
+indexOf()  
+Returns the first (least) index of an element within the array equal to the specified value, or -1 if none is found  
+join()  
+Joins all elements of an array into a string  
+lastIndexOf()  
+Returns the last (greatest) index of an element within the array equal to the specified value, or -1 if none is found  
+map()  
+Creates a new array with the results of calling a provided function on every element in this array  
+pop()  
+Removes the last element from an array and returns that element  
+push()  
+Adds one or more elements to the end of an array and returns the new length of the array  
+reduce()  
+Applies a function simultaneously against two values of the array (from left-to-right) as to reduce it to a single value  
+reduceRight()  
+Applies a function simultaneously against two values of the array (from right-to-left) as to reduce it to a single value  
+reverse()  
+Reverses the order of the elements of an array -- the first becomes the last, and the last becomes the first 
+        shift()  
+Removes the first element from an array and returns that element  
+slice()  
+Extracts a section of an array and returns a new array  
+some()  
+Returns true if at least one element in this array satisfies the provided testing function  
+toSource()  
+Represents the source code of an object  
+sort()  
+Sorts the elements of an array  
+splice()  
+Adds and/or removes elements from an array  
+toString()  
+Returns a string representing the array and its elements  
+unshift()  
+Adds one or more elements to the front of an array and returns the new length of the array 
+</pre>
+
+    <script>
+        var alphas;
+        alphas = ["1", "2", "3", "4"]
+        console.log(alphas[0]);
+        console.log(alphas[1]);
+
+        //----------------------------Array object
+        var arr_names = new Array(4)
+        for (var i = 0; i < arr_names.length; i++) {
+            arr_names[i] = i * 2
+            console.log(arr_names[i])
+        }
+
+        //--------------- Array Constructor Accepts Comma-separated Values  
+
+        var names = new Array("sri", "ram", "Jaya", "jini")
+        for (var i = 0; i < names.length; i++) {
+            console.log(names[i])
+        }
+
+        //concat
+        var alpha = ["a", "b", "c"];
+        var numeric = [1, 2, 3];
+        var alphaNumeric = alpha.concat(numeric);
+        console.log("alphaNumeric : " + alphaNumeric);//alphaNumeric : a,b,c,1,2,3 
+
+
+        //Return 
+        function isBigEnough(element, index, array) {
+            return (element >= 10);
+        }
+
+        var passed = [12, 5, 8, 130, 44].every(isBigEnough);
+        console.log("Test Value : " + passed);
+
+
+        //................filter
+        function isBigEnough(element, index, array) {
+            return (element >= 10);
+        }
+
+        var passed = [12, 5, 8, 130, 44].filter(isBigEnough);
+        console.log("Test Value : " + passed);
+
+
+        //.....................foreach
+        var nums = new Array(12, 13, 14, 15)
+        console.log("Printing original array......")
+        nums.forEach(function (val, index) {
+            console.log(val)
+        })
+        nums.reverse()  //reverses the array element 
+        console.log("Printing Reversed array....")
+        nums.forEach(function (val, index) {
+            console.log(val)
+        })
+
+        //.............pop
+        var numbers = [1, 4, 9];
+
+        var element = numbers.pop();
+        console.log("element is : " + element);
+
+        var element = numbers.pop();
+        console.log("element is : " + element);
+
+        //..............push
+        var length = numbers.push(10);
+        console.log("new numbers is : " + numbers);
+        length = numbers.push(20);
+        console.log("new numbers is : " + numbers);
+
+        //.....................................
+        //Array.prototype.findIndex         findIndex behaves similar to find, but instead of returning the 
+        //element that matched, it returns the index of that element. 
+        var numbers = [1, 2, 3]; 
+        var oddNumber = numbers.findIndex((x) => x % 2 == 1); 
+        console.log(oddNumber); // 0 
+
+        //.......................
+        //  Array.prototype.entries         entries is a function that returns an Array Iterator that can be
+        //used to loop through the array’s keys and values. Entries will return an array of arrays, where each child array is an array of [index, value]. 
+            var numbers = [1, 2, 3]; 
+            var val= numbers.entries(); 
+            console.log(val.next().value);  
+            console.log(val.next().value);  
+            console.log(val.next().value); 
+
+        /*
+        Array.from           Array.from() enables the creation of a new array from an array like object.
+        The basic functionality of Array.from() is to convert two kinds of values to Arrays: 
+         Array-like values  Iterable values like Set and Map 
+        */
+            "use strict" 
+            for (let i of Array.from('hello')) 
+            { 
+              console.log(i) 
+            } 
+
+                //for in loop
+                "use strict" 
+                var nums=[1001,1002,1003,1004] 
+                for(let j in nums) 
+                            { 
+                    console.log(nums[j]) 
+            } 
+
+                //Multi dimensional
+                var multi=[[1,2,3],[23,24,25]]  
+                console.log(multi[0][0]) 
+                console.log(multi[0][1]) 
+                console.log(multi[0][2]) 
+                console.log(multi[1][0]) 
+                console.log(multi[1][1]) 
+                console.log(multi[1][2]) 
+                
+
+                //Function returning array
+                function disp() 
+            { 
+            return new Array("sri","raj","kiran","lallitha") 
+                    } 
+        var nums=disp() 
+                        for(var i in nums) 
+                        { 
+                            console.log(nums[i])   
+                        } 
+
+        //de-structure
+            var arr=[12,13] 
+            var[x,y]=arr 
+            console.log(x) 
+            console.log(y) 
+
+    </script>
+</body>
+</html>

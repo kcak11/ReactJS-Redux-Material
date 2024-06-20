@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Learning ES6</title>
+</head>
+<body>
+<h2>let keyword is used to define block scope(bracket scope) variables in JavaScript.</h2>
+<script type="text/javascript">
+	/*let x=10; //global scope
+	if(true){
+		let y=20;
+		console.log(y,x);
+	}
+	console.log(y);*/
+	"use strict";
+	let customer="Ashish";
+	(function(){
+		console.log("name of customer inside function",customer);
+		if(true){
+			let customer="Kumar";
+			console.log("name of customer inside block",customer);
+		}
+	}());
+	for(let i=0;i<=5;i++){
+		console.log("i=",i);
+	}
+	console.log("i=",i);
+</script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>generator.html</title>
+</head>
+<body>
+<h1>Generator yield values (used for custom generators)</h1>
+<h2>
+JavaScript’s yield keyword and function*() syntax together make JS Generators.</h2></br>
+
+JavaScript generators provide a new way for functions to return a collection and also a new way of looping(or iterating) through the elements of the returned collection.
+</h2>
+<script>
+
+    //Generator
+    "use strict" 
+    function* rainbow() { // the asterisk marks this as a generator 
+        yield 'red'; 
+        yield 'orange'; 
+        yield 'yellow'; 
+        yield 'green'; 
+        yield 'blue'; 
+        yield 'indigo'; 
+        yield 'violet'; 
+    } 
+    for(let color of rainbow()) { 
+    console.log(color); 
+    } 
+
+        //Try 
+        /*
+        Sequence of the generator function is as follows: 
+ -  Generator started in paused stated; iterator is returned.   
+ - The it.next() yields “What is your name”. The generator is paused. This is done by the yield keyword.  - 
+ - The call it.next(“Ethan”) assigns the value Ethan to the variable name and yields “What is your favorite sport?” Again the generator is paused.  
+-  The call it.next(“Cricket”) assigns the value Cricket to the variable sport and executes the subsequent return statement. 
+
+        */
+        function* ask() { 
+                const name = yield "What is your name?"; 
+                const sport = yield "What is your favorite sport?"; 
+                return `${name}'s favorite sport is ${sport}`; 
+        }  
+        const it = ask(); 
+        console.log(it.next()); 
+        console.log(it.next('Ethan'));  
+        console.log(it.next('Cricket')); 
+        //--------------------------------
+
+  "use strict";
+  function* getStockPrice(symbol){
+
+      while(true){
+          yield Math.random()*100;
+
+          console.log(`resuming for ${symbol}`);
+      }
+  }
+
+  let generator = getStockPrice("IBM");
+
+  const limitPrice = 15;
+  let price = 100;
+
+  while ( price > limitPrice){
+
+      price = generator.next().value;
+      console.log (`The generator returned ${price}`);
+  }
+
+  console.log(`buying at ${price} !!!`);
+
+</script>
+
+</body>
+</html>

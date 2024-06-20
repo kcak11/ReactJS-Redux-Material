@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>destructuring.html</title>
+</head>
+<body>
+<h2>Press F12 and open console tab to see the result.</h2>
+    <h2>Returning multiple values - Destructuring</h2>
+    <script>
+   function function_name() { return [1, 6, 7, 4, 8, 0]; 
+   //here we are storing variables in an array and returning the array
+    }
+    var q, w, e, r, t, y;
+     //Here we are using ES6's array destructuring feature to assign the returned values to variables.
+
+      //Here we are ignoring 2 and 4 array indexes 
+      [q, w, , r, , y] = function_name(); 
+      alert(y);//y is 0
+
+    </script>
+
+<script>
+
+// Destructuring of the returned object (Returning multiple values)
+    function getStock(){
+
+        return {
+            symbol: "Sapient",
+            price: 100.00
+        };
+    }
+
+    let {symbol, price} = getStock();
+
+    console.log(`The price of ${symbol} is ${price}`);
+
+// Destructuring of the nested object
+
+    let msft = {symbol: "Yahoo",
+        lastPrice: 50.00,
+        exchange: {
+            name: "NASDAQ",
+            tradingHours: "9:30am-4pm"
+        }
+    };
+
+    function printStockInfo(stock){
+        let {symbol, exchange:{name}} = stock;
+        console.log(`The ${symbol} stock is traded at ${name}`);
+    }
+
+    printStockInfo(msft);
+
+
+// Destructuring of an array
+
+    let [name1, name2] = ["Srirama", "Murthy"];
+    console.log(`name1 = ${name1}, name2=${name2}`);
+
+
+// A function that returns multiple values
+
+    function getCustomers(){
+        return ["Raju", "Kavitha", "Lavanya", "Govind"];
+    }
+
+    let [firstCustomer,,,lastCustomer] = getCustomers();
+    console.log(`The first customer is ${firstCustomer} and the last one is ${lastCustomer}`);
+
+
+// Array destructuring + ...rest
+
+    var customers = ["Sudha", "Clinton", "Ravi", "Srinivas"];
+
+    function processFirstTwoCustomers([firstCust, secondCust, ...otherCust]){
+
+    console.log(`The first customer is ${firstCust} and the second one is ${secondCust}`);
+    console.log(`Other customers are ${otherCust}`);
+
+    }
+
+    processFirstTwoCustomers(customers);
+
+
+
+</script>
+
+</body>
+</html>

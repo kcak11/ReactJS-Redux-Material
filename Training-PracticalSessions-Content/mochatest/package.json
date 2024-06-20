@@ -1,0 +1,29 @@
+{
+  "name": "mochatest",
+  "version": "1.0.0",
+  "description": "Learning mocha",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "blanket": "^1.1.9",
+    "chai": "^3.4.0"
+  },
+  "devDependencies": { 
+    "mocha": "^2.3.3"
+  },
+  "config": {
+    "blanket": {
+      "pattern":["index.js"],
+      "data-cover-never": "node_modules"
+    }
+  },
+  "scripts": {
+    "test": "mocha && mocha test 
+            --require blanket 
+            --reporter html-cov>coverage.html"
+  },
+  "author": "Murthy",
+  "license": "ISC"
+}

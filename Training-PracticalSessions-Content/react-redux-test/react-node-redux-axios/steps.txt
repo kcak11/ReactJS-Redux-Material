@@ -1,0 +1,13 @@
+To run ths project:
+
+first Git bash Server and type > npm run dev
+   Now server running on port 3000 (REST Services are running)
+
+
+Next, Git Bash client and type > npm run dev
+   Now web-dev-server  running on 8080
+
+
+Open browser and type  localhost:8080
+
+click on link to invoke REST API with Axios

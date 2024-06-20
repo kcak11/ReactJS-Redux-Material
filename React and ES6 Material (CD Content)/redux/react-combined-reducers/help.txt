@@ -1,0 +1,21 @@
+Combined Reducers:
+
+Open client.js and modify code to keep track other data like userid etc.
+
+Now open App.js and add some html stuff to show username and Userid
+for that create userinfo.js and write code and add it to app.js
+
+Open action.js and add below code to generage new userid
+createNewUserId: function() {
+    return {
+      type: 'CREATE_USER_ID',
+      id: Math.round(Math.random() * 100)
+    }
+  }
+
+Create a folder called reducers
+add todoReducer.js
+add userReducer.js 
+
+now in store.js  , refer rootReducer .
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	function abc(){
+		return "abcdef".split("");
+	}
+	[q,,e,r,,y]=abc();
+	console.log(e);
+
+	function getStock(){
+		return{
+			symbol: "Verizon",
+			price:100.00
+		};
+	}
+	let{symbol,price}=getStock();
+	console.log(symbol,price);
+
+	let msft={
+		symbol2:"Yahoo",
+		lastPrice:50,
+		exchange:{
+			name:"NASDAQ"
+		}
+	};
+	var {symbol2,exchange:{name}}=msft;
+	console.log(symbol);
+	console.log(name);
+</script>
+</body>
+</html>

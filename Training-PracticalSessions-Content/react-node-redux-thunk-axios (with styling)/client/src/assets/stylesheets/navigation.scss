@@ -1,0 +1,49 @@
+// ======================
+// we want to import our variables and base scss into
+// our current scss.
+// ======================
+@import "base";
+
+// ======================
+// let's start formating our navigation bar!
+// ======================
+
+.navigation_container {
+  width: 100%;
+  background: $white;
+  font-family: $font-stack;
+  -webkit-box-shadow: 0px 0px 10px 1px $tertiary-color;
+  -moz-box-shadow: 0px 0px 10px 1px $tertiary-color;
+  box-shadow: 0px 0px 10px 1px $tertiary-color;
+
+  h3 {
+    line-height: 2em;
+  }
+}
+
+.nav_menu {
+  font-size: $nav-size;
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  li {
+    float: right;
+  }
+
+  li a {
+    display: block;
+    color: $nav-color;
+    text-align: center;
+    padding: 0px 7.5px;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: $nav-hover;
+  }
+}

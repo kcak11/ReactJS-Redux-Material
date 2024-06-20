@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html >
+<head>
+    <title></title>
+</head>
+<body>
+    <center><h1 style="background-color:yellow">Regex-   ES6 Demo by Murthy</h1></center>
+    <script>
+        var str = "Javascript is an interesting scripting language";
+        var re = new RegExp("script", "g");
+        var result = re.toString(str);
+        console.log("Test 1 - returned value : " + result);
+        re = new RegExp("/", "g");
+        var result = re.toString(str);
+        console.log("Test 2 - returned value : " + result)
+
+    </script>
+
+</body>
+</html>

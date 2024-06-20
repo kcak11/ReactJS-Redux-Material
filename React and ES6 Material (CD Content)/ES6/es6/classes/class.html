@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html >
+<head>
+    <title></title>
+</head>
+<body>
+    <pre>
+        Object Orientation is a software development paradigm that follows real-world modelling. 
+        Object Orientation, considers a  program as a collection of objects that communicates with 
+        each other via mechanism called methods.
+
+        Object-Oriented Programming Concepts  
+         ------------------------------------------
+
+Object: An object is a real-time representation of any entity. According to Grady Brooch, every object is said to have 3 features:  
+    o State: Described by the attributes of an object.  
+    o Behavior: Describes how the object will act.  
+    o Identity: A unique value that distinguishes an object from a set of similar such objects.  
+
+Class: A class in terms of OOP is a blueprint for creating objects. A class encapsulates data for the object.  
+
+Method: Methods facilitate communication between objects. 
+</pre>
+    <script>
+        'use strict' 
+    class Polygon { 
+        constructor(height, width) { 
+            this.h = height; 
+            this.w = width; 
+        } 
+        test() 
+        { 
+            console.log("The height of the polygon: ", this.h) 
+            console.log("The width of the polygon: ",this. w) 
+        } 
+    } 
+    //creating an instance  
+    var polyObj= new Polygon(10,20); 
+    polyObj.test(); 
+
+
+        //.........................instanceof
+    'use strict' 
+    class Person{ } 
+        var obj=new Person() 
+        var isPerson=obj instanceof Person; 
+        console.log(" obj is an instance of Person " + isPerson); 
+
+        
+        //.................inheritance
+        'use strict' 
+        class Shape 
+        { 
+            constructor(a) 
+            { 
+                this.Area=a 
+            } 
+        } 
+        class Circle extends Shape 
+        { 
+            disp() 
+            { console.log("Area of the circle:  "+this.Area) } 
+        } 
+        var obj=new Circle(223); 
+        obj.disp() 
+
+
+        //Inheritance can be classified as: 
+        //Single: Every class can at the most extend from one parent class  
+        //Multiple: A class can inherit from multiple classes. ES6 doesn’t support multiple inheritance.  
+
+        //Multi-level:        
+        'use strict' 
+        class Root 
+        { 
+            test() 
+            { 
+                console.log("call from parent class") 
+            } 
+        } 
+        class Child extends Root 
+        {} 
+        class Leaf extends Child   
+        //indirectly inherits from Root by virtue of inheritance 
+        {} 
+        var obj= new Leaf();
+
+        //overriding
+        'use strict' 
+        class PrinterClass 
+        { 
+            doPrint() 
+            { 
+                console.log("doPrint() from Parent called… 
+                }  
+       
+            class StringPrinter extends PrinterClass 
+            { 
+                doPrint() 
+                { 
+                    console.log("doPrint() is printing a string…") } 
+            } 
+            var obj= new StringPrinter() 
+            obj.doPrint()  
+
+            //super keyword
+            'use strict' 
+            class PrinterClass 
+            { 
+                doPrint() 
+                {console.log("doPrint() from Parent called…") } 
+            }  
+            class StringPrinter extends PrinterClass 
+            { 
+                doPrint() 
+                { 
+                super.doPrint() 
+                    console.log("doPrint() is printing a string…") } 
+            } 
+            var obj= new StringPrinter() 
+            obj.doPrint() 
+    </script>
+</body>
+</html>

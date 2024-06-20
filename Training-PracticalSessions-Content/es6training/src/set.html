@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	var set=new Set();
+	set.add({"x":"ashish"});
+	set.add(44);
+	set.add("text");
+	console.log(set);
+	for(var o=set;o;o=Object.getPrototypeOf(o)){
+		Object.getOwnPropertyNames(o).forEach(function(p){
+			if(p==="entries"){
+				console.log(o[p]);
+			}
+		});
+	}
+	for(var i of set){
+		console.log(i);
+	}
+	var set_1=new Set([1,2,3,4,5,3]);
+	console.log(set_1.size);
+	console.log(set_1);
+	set_2=new Set(set.values());
+</script>
+</body>
+</html>

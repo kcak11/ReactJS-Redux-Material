@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html >
+<head>
+    <title></title>
+</head>
+<body>
+    <center><h1 style="background-color:yellow">Collections-   ES6 Demo by Murthy</h1></center>
+    <pre>
+            ES6 introduces two new data structures: Maps and Sets. 
+            
+            Maps: This data structure enables mapping a key to a value.
+            
+            Sets: Sets are similar to arrays. However, sets do not encourage duplicates. 
+
+        Maps             
+        The Map object is a simple key/value pair. Keys and values in a map may be primitive or objects. 
+
+        Following is the syntax for the same. 
+
+        new Map([iterable]) 
+        
+        The parameter iterable represents any iterable object whose elements comprise of a key/value pair. 
+        
+        Maps are ordered, i.e. they traverse the elements in the order of their insertion. 
+
+
+
+        Weak Maps           
+        
+        A weak map is identical to a map with the following exceptions:  
+        
+        - Its keys must be objects.  
+        
+        - Keys in a weak map can be garbage collected. Garbage collection is a process of clearing the memory occupied by unreferenced objects in a program.  
+
+        - A weak map cannot be iterated or cleared. 
+
+</pre>
+    <script>
+        var myMap = new Map();
+        myMap.set("J", "javid");
+        myMap.set("M", "Mallika");
+        myMap.set("T", "Tarun");
+        console.log(myMap.size);
+
+        //.... map set is chainable
+        var roles = new Map();
+        roles.set('r1', 'User')
+            .set('r2', 'Guest')
+            .set('r3', 'Admin');
+        console.log("check"+roles.has('r1'))//true
+
+
+        //get
+        
+        console.log(roles.get('r2'))  //guest
+        console.log(`value of key r1 before set(): ${roles.get('r1')}`) //User
+        roles.set('r1','superUser') 
+        console.log(`value of key r1 after set(): ${roles.get('r1')}`) //superuser
+
+        //delete
+        var myMap2 = new Map(); 
+        myMap2.set("id", "admin"); 
+        myMap2.set("pass", "admin@123"); 
+        console.log(myMap2.has("id")); 
+        myMap2.delete("id"); 
+        console.log(myMap2.has("id")); 
+        
+        //entries
+        
+        var itr = myMap2.entries(); 
+        console.log(itr.next().value); 
+        console.log(itr.next().value); 
+
+
+        //..................... iterator
+        function userdetails(key,value) { 
+            console.log("m[" + key + "] = " + value); 
+        }  
+        var myMap3 = new Map(); 
+        myMap3.set("id", "admin"); 
+        myMap3.set("pass", "admin@123"); 
+        myMap3.forEach(userdetails);         
+        var itr=myMap3.keys(); 
+        console.log(itr.next().value); 
+        console.log(itr.next().value); 
+
+
+
+        //.....weakmap
+        'use strict' 
+        let weakMap = new WeakMap(); 
+        let obj ={}; 
+        console.log(weakMap.set(obj,"hello"));  
+        console.log(weakMap.has(obj));// true 
+
+        //.......set
+        var mySet = new Set('Sri','Raj','kiran'); 
+        var tot=mySet.size; 
+        console.log(tot); 
+
+        //----------------------delete
+        var set = new Set(); 
+        set.add(10); 
+        set.add(10); // duplicate not added 
+        set.add(10); // duplicate not added 
+        set.add(20); 
+        set.add(30); 
+        console.log(set.size); 
+        set.delete(10) 
+        console.log(`Size of Set after delete() :${set.size}`); 
+        console.log(`Set has 10 after delete() :${set.has(10)}`); 
+
+
+        //...................
+        var mySet = new Set(); 
+        mySet.add("sri"); 
+        mySet.add("ram"); 
+        mySet.add("kiran"); 
+
+        var itr=mySet.entries() 
+        console.log(itr.next().value); 
+        console.log(itr.next().value); 
+        console.log(itr.next().value); 
+
+        
+
+
+    </script>
+</body>
+</html>

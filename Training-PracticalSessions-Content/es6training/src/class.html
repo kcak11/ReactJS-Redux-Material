@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+class Polygon{
+	constructor(height,width){
+		this.h=height;
+		this.w=width;
+	}
+	test(){
+		console.log("Height:",this.h);
+		console.log("Width:",this.w);
+	}
+
+}
+var polyObj=new Polygon(45,56);
+polyObj.test();
+console.log(polyObj instanceof Polygon);
+
+class Student{
+	constructor(name,age){
+		this.name=name;
+		this._age=age;
+	}
+	getName(){
+		return this.name;
+	}
+	setName(name){
+		this.name=name;
+	}
+	set age(value){
+		this._age=value;
+	}
+	get age(){
+		return this._age;
+	}
+}
+var student=new Student("Ashish",10);
+console.log(student.getName());
+console.log(student.age);
+student.age=23;
+console.log(student.age);
+
+class Person extends Student{
+	constructor (name, age, citizen){
+		super(name,age);
+		this.citizen=citizen;
+	}
+	getCitizen(){
+		return this.citizen;
+	}
+	getName(){
+		return super.getName();
+	}
+}
+var p1=new Person("Ashish",20,"India");
+console.log(p1.getCitizen());
+console.log(p1.getName());
+</script>
+</body>
+</html>
